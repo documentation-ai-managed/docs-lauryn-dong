@@ -1,0 +1,149 @@
+---
+title: Changelog
+description: Track the evolution of LAURYN DONG with detailed release notes on new features, improvements, and fixes.
+---
+
+## Overview
+
+LAURYN DONG evolves rapidly to enhance your note-taking and journaling experience. Review release notes below to understand new capabilities, performance gains, and resolved issues. You receive automatic updates, but check migration notes for breaking changes.
+
+<Callout kind="info">
+  Subscribe to our RSS feed at `https://docs.example.com/changelog.xml` for instant notifications on new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared journals
+- Introduced custom themes with brand color support (`#3B82F6` as default blue)
+
+## Improvements
+
+- Enhanced search with fuzzy matching and tags
+- Optimized sync performance by `>30%` for large notebooks
+
+## Bug Fixes
+
+- Fixed sync conflicts during offline edits
+- Resolved export issues with embedded images
+
+</Update>
+
+<Update label="2024-09-25" description="v1.1.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Upgraded mobile app UI for better touch interactions
+- Added keyboard shortcuts like `<kbd>Ctrl</kbd>+<kbd>K</kbd>` for quick search
+
+## Bug Fixes
+
+- Patched authentication token refresh errors
+- Corrected date picker glitches in weekly views
+
+## Performance
+
+- Reduced memory usage for `>50` open tabs
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core journaling engine with Flomo integration (`https://v.flomoapp.com/mine`)
+- Basic dashboard for daily/weekly summaries
+
+## Breaking Changes
+
+- Updated API endpoints from `/v0` to `/v1`
+- Removed legacy Markdown parser
+
+## Migration Notes
+
+See the dedicated section below.
+
+</Update>
+
+## Migration Guide
+
+For major releases like v1.0.0, follow these steps to update smoothly.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+
+    Export your journals:
+
+````bash
+npx lauryn-dong export --format=json --output=backup.json
+````
+
+  </Step>
+  <Step title="Update Package" icon="download">
+
+    <CodeGroup tabs="npm,yarn,pnpm">
+````bash
+npm install lauryn-dong@latest
+````
+````bash
+yarn add lauryn-dong@latest
+````
+````bash
+pnpm add lauryn-dong@latest
+````
+    </CodeGroup>
+
+  </Step>
+  <Step title="Run Migration" icon="settings">
+
+    Apply schema changes:
+
+````bash
+npx lauryn-dong migrate --version=1.0.0
+````
+
+  </Step>
+  <Step title="Verify" icon="check-circle">
+
+    Test sync:
+
+````bash
+npx lauryn-dong test-sync --api-key=YOUR_API_KEY
+````
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  If you encounter API errors, regenerate your key at `https://dashboard.example.com/settings`.
+</Callout>
+
+## Upcoming Features
+
+Preview what's next for LAURYN DONG.
+
+<Columns cols={2}>
+  <Card title="AI Summaries" icon="zap" href="#ai-summaries">
+    Auto-generate weekly insights from your notes.
+  </Card>
+  <Card title="Plugin System" icon="puzzle" href="#plugins">
+    Extend with custom integrations.
+  </Card>
+  <Card title="Voice Input" icon="mic" href="#voice">
+    Transcribe thoughts on the go (horizontal).
+    <br />
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Roadmap" default-open="false">
+
+| Feature | Status | ETA |
+|---------|--------|-----|
+| AI Summaries | In Development | Q4 2024 |
+| Plugin System | Beta Testing | Q1 2025 |
+| Voice Input | Planned | Q2 2025 |
+
+</Expandable>

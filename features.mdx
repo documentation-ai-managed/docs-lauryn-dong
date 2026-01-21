@@ -1,0 +1,141 @@
+---
+title: Core Features of LAURYN DONG
+description: Explore the essential capabilities of LAURYN DONG, from thought capture to organization, to enhance your productivity.
+---
+
+## Overview
+
+LAURYN DONG empowers you to capture thoughts instantly, organize them efficiently, and review them daily across all your devices. You streamline your productivity with intuitive workflows that turn fleeting ideas into actionable insights. This guide covers the core features that make note-taking seamless.
+
+<Columns cols={2}>
+  <Card title="Streamlined Workflows" icon="edit-3" href="#streamlined-workflows">
+    Capture and process notes in seconds.
+  </Card>
+  <Card title="Tagging & Search" icon="tag" href="#tagging-search">
+    Find anything with powerful organization tools.
+  </Card>
+  <Card title="Daily Review" icon="calendar" href="#daily-review">
+    Reflect and export with ease.
+  </Card>
+  <Card title="Mobile Sync" icon="smartphone" href="#mobile-sync">
+    Stay consistent everywhere.
+  </Card>
+</Columns>
+
+## Streamlined Note-Taking Workflows
+
+You start capturing ideas with minimal friction. LAURYN DONG's quick-entry interface lets you jot down notes via keyboard shortcuts, voice input, or mobile widgets.
+
+<Steps>
+  <Step title="Quick Capture" icon="plus">
+    Press `<kbd>Cmd</kbd>+<kbd>K</kbd>` (macOS) or `<kbd>Ctrl</kbd>+<kbd>K</kbd>` (Windows) to open the capture modal.
+
+    Add your note and hit Enter.
+  </Step>
+  <Step title="Auto-Organize" icon="file-text">
+    Notes land in your inbox, ready for processing.
+  </Step>
+  <Step title="Refine" icon="shuffle">
+    Drag to folders or apply tags in one motion.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable auto-save to never lose a thought, even offline.
+</Callout>
+
+## Tagging and Searching Notes
+
+You organize notes with flexible tagging and lightning-fast search. Tags act as dynamic filters, while full-text search handles fuzzy queries.
+
+<Tabs>
+  <Tab title="Tagging" icon="tag">
+    Add tags like `#project-alpha` or `#idea` during capture.
+
+    ```javascript
+    // Example tag application via API
+    await fetch('https://api.example.com/notes/123/tags', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_TOKEN' },
+      body: JSON.stringify({ tags: ['#urgent', '#meeting'] })
+    });
+    ```
+  </Tab>
+  <Tab title="Searching" icon="search">
+    Query with `tag:#project-alpha` or natural language.
+
+    Use advanced operators like `from:2024-01` for date ranges.
+  </Tab>
+</Tabs>
+
+## Daily Review and Export Options
+
+You build habits with daily reviews that surface key notes. Export in multiple formats for backups or sharing.
+
+<CodeGroup tabs="JSON,Markdown,CSV">
+  ```json
+  {
+    "notes": [
+      {
+        "id": "note-456",
+        "content": "Review daily goals",
+        "tags": ["#daily"],
+        "date": "2024-10-15"
+      }
+    ]
+  }
+  ```
+  ```markdown
+  # Daily Review - 2024-10-15
+
+  - Review daily goals [#daily]
+  - Follow up on #project-alpha
+  ```
+  ```csv
+  id,content,tags,date
+  note-456,Review daily goals,"#daily",2024-10-15
+  ```
+</CodeGroup>
+
+<ParamField path="date" param-type="string" required="true">
+  Filter reviews by specific date, e.g., `2024-10-15`.
+</ParamField>
+
+## Mobile Synchronization Across Devices
+
+You access your notes seamlessly on phone, tablet, or desktop. Changes sync in real-time via end-to-end encryption.
+
+<Expandable title="Advanced Sync Settings" default-open="false">
+
+Enable selective sync to prioritize recent notes.
+
+```javascript
+// Configure sync via settings API
+const syncConfig = {
+  devices: ['iphone', 'macbook'],
+  autoSync: true,
+  maxOffline: '7d'
+};
+```
+
+</Expandable>
+
+<Callout kind="success">
+  All data encrypts client-side before syncing.
+</Callout>
+
+## Best Practices
+
+Combine features for maximum impact: Tag during capture, review daily, and export weekly. This workflow keeps you organized without overhead.
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="zap" href="/quickstart">
+    Set up in 5 minutes.
+  </Card>
+  <Card title="Advanced Tips" icon="settings" href="/guides/advanced">
+    Unlock power features.
+  </Card>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Integrate programmatically.
+  </Card>
+</Columns>
